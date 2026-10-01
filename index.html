@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduHub - Learn Smarter</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Edu<span>Hub</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#resources">Resources</a>
+      <a href="#pyq">PYQs</a>
+      <a href="#channels">YouTube</a>
+      <a href="#live">Live Classes</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div>
+        <p class="badge">10th • Intermediate • B.Tech</p>
+        <h1>Your one-stop <span>education hub.</span></h1>
+        <p class="hero-text">
+          Find notes, previous year questions, useful YouTube channels,
+          and live classes in one simple place.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#resources">Explore Resources</a>
+          <a class="btn secondary" href="#pyq">Practice PYQs</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="cap">🎓</div>
+        <h3>Learn. Practice. Grow.</h3>
+        <p>Organized study resources for every stage.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <p class="eyebrow">Choose your level</p>
+        <h2>What are you studying?</h2>
+      </div>
+      <div class="level-grid">
+        <button class="level-card active" onclick="selectLevel('10th', this)">
+          <span>📚</span><strong>10th Class</strong><small>School resources</small>
+        </button>
+        <button class="level-card" onclick="selectLevel('Inter', this)">
+          <span>🎯</span><strong>Intermediate</strong><small>1st & 2nd Year</small>
+        </button>
+        <button class="level-card" onclick="selectLevel('B.Tech', this)">
+          <span>💻</span><strong>B.Tech</strong><small>Engineering subjects</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="resources" class="section">
+      <div class="section-title">
+        <p class="eyebrow">Study material</p>
+        <h2 id="resourceTitle">10th Class Resources</h2>
+      </div>
+
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="Search subject, topic or resource..." oninput="renderResources()">
+        <select id="typeFilter" onchange="renderResources()">
+          <option value="all">All resources</option>
+          <option value="Notes">Notes</option>
+          <option value="Video">YouTube</option>
+          <option value="PYQ">PYQ</option>
+          <option value="Live">Live Class</option>
+        </select>
+      </div>
+      <div id="resourceGrid" class="resource-grid"></div>
+    </section>
+
+    <section id="pyq" class="section alt">
+      <div class="section-title">
+        <p class="eyebrow">Exam preparation</p>
+        <h2>Previous Year Questions</h2>
+      </div>
+      <div class="pyq-grid" id="pyqGrid"></div>
+    </section>
+
+    <section id="channels" class="section">
+      <div class="section-title">
+        <p class="eyebrow">Learn from experts</p>
+        <h2>Useful YouTube Channels</h2>
+      </div>
+      <div class="channel-grid" id="channelGrid"></div>
+    </section>
+
+    <section id="live" class="section alt">
+      <div class="section-title">
+        <p class="eyebrow">Learn together</p>
+        <h2>Live Classes</h2>
+      </div>
+      <div class="live-grid">
+        <article class="live-card">
+          <span class="live-dot">● LIVE</span>
+          <h3>Mathematics Revision</h3>
+          <p>Interactive revision session for important exam topics.</p>
+          <button class="btn primary" onclick="alert('Add your live-class URL in js/app.js')">Join Class</button>
+        </article>
+        <article class="live-card">
+          <span class="scheduled">UPCOMING</span>
+          <h3>Programming Fundamentals</h3>
+          <p>Learn C/Java/Python basics with practical examples.</p>
+          <button class="btn secondary" onclick="alert('Add your live-class URL in js/app.js')">View Details</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>EduHub</strong>
+    <p>Notes • PYQs • YouTube • Live Classes</p>
+    <small>Built as an education resource platform.</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
